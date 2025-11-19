@@ -106,6 +106,7 @@ article {
     transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transição suave */
     border-bottom: 1px solid var(--bg-color); /* Borda inferior */
     padding-bottom: 1.5rem; /* Espaçamento interno inferior */
+    transition: all 0.3s ease-in-out;
 }
 
 article:hover {

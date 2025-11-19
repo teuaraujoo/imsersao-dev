@@ -1,0 +1,62 @@
+[
+    {
+        "nome": "JavaScript",
+        "descricao": "O JS é a linguagem da web",
+        "ano": 1995,
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    }, 
+    {
+        "nome": "Python",
+        "descricao": "Python é uma linguagem da ciência de dados e IA",
+        "ano": 1991,
+        "link": "https://docs.python.org/3/"
+    },
+    {
+        "nome": "Java",
+        "descricao": "Java é uma linguagem de programação orientada a objetos, amplamente utilizada para aplicações corporativas e Android.",
+        "ano": 1995,
+        "link": "https://docs.oracle.com/en/java/"
+    },
+    {
+        "nome": "C#",
+        "descricao": "C# é uma linguagem de programação moderna, orientada a objetos, desenvolvida pela Microsoft, usada para Windows, web e jogos (Unity).",
+        "ano": 2000,
+        "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
+    },
+    {
+        "nome": "Go",
+        "descricao": "Go (ou Golang) é uma linguagem de programação de código aberto criada pelo Google, focada em desempenho e concorrência.",
+        "ano": 2009,
+        "link": "https://go.dev/doc/"
+    },
+    {
+        "nome": "Ruby",
+        "descricao": "Ruby é uma linguagem de programação dinâmica, orientada a objetos, conhecida por sua simplicidade e produtividade, especialmente com o framework Rails.",
+        "ano": 1995,
+        "link": "https://www.ruby-lang.org/en/documentation/"
+    },
+    {
+        "nome": "TypeScript",
+        "descricao": "TypeScript é um superset do JavaScript que adiciona tipagem estática opcional à linguagem, desenvolvido pela Microsoft.",
+        "ano": 2012,
+        "link": "https://www.typescriptlang.org/docs/"
+    },
+    {
+        "nome": "Rust",
+        "descricao": "Rust é uma linguagem de programação focada em segurança, concorrência e desempenho, patrocinada pela Mozilla.",
+        "ano": 2010,
+        "link": "https://doc.rust-lang.org/book/"
+    },
+    {
+        "nome": "Kotlin",
+        "descricao": "Kotlin é uma linguagem de programação moderna e pragmática desenvolvida pela JetBrains, e é a linguagem preferida para desenvolvimento Android.",
+        "ano": 2011,
+        "link": "https://kotlinlang.org/docs/home.html"
+    },
+    {
+        "nome": "Swift",
+        "descricao": "Swift é uma linguagem de programação poderosa e intuitiva criada pela Apple para desenvolvimento de apps para iOS, Mac, Apple TV e Apple Watch.",
+        "ano": 2014,
+        "link": "https://developer.apple.com/documentation/swift"
+    }
+]
