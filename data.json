@@ -1,62 +1,62 @@
 [
     {
-        "nome": "JavaScript",
-        "descricao": "O JS é a linguagem da web",
-        "ano": 1995,
-        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-    }, 
-    {
-        "nome": "Python",
-        "descricao": "Python é uma linguagem da ciência de dados e IA",
-        "ano": 1991,
-        "link": "https://docs.python.org/3/"
+        "nome": "GitHub Copilot",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/github/copilot/1.189.0/1719521133271/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Uma ferramenta de programação em par com IA que oferece sugestões de código em linha e assistência de bate-papo integrada, ajudando os desenvolvedores a escrever código de forma mais rápida e inteligente.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot"
     },
     {
-        "nome": "Java",
-        "descricao": "Java é uma linguagem de programação orientada a objetos, amplamente utilizada para aplicações corporativas e Android.",
-        "ano": 1995,
-        "link": "https://docs.oracle.com/en/java/"
+        "nome": "GitLens",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/eamodio/gitlens/15.2.0/1719602686899/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Potencializa os recursos do Git no VS Code, oferecendo funcionalidades como anotações do Git blame, navegação fácil por repositórios e insights sobre o histórico e autoria do código.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens"
     },
     {
-        "nome": "C#",
-        "descricao": "C# é uma linguagem de programação moderna, orientada a objetos, desenvolvida pela Microsoft, usada para Windows, web e jogos (Unity).",
-        "ano": 2000,
-        "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
+        "nome": "Prettier",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/10.4.0/1702474899338/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Um formatador de código opinativo que formata o código automaticamente para garantir um estilo consistente em todos os projetos, melhorando a legibilidade e mantendo os padrões de codificação.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
     },
     {
-        "nome": "Go",
-        "descricao": "Go (ou Golang) é uma linguagem de programação de código aberto criada pelo Google, focada em desempenho e concorrência.",
-        "ano": 2009,
-        "link": "https://go.dev/doc/"
+        "nome": "ESLint",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/dbaeumer/vscode-eslint/3.0.10/1718993886880/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Um linter poderoso que identifica e corrige problemas em código JavaScript e TypeScript, ajudando a manter a qualidade do código e a prevenir erros comuns.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint"
     },
     {
-        "nome": "Ruby",
-        "descricao": "Ruby é uma linguagem de programação dinâmica, orientada a objetos, conhecida por sua simplicidade e produtividade, especialmente com o framework Rails.",
-        "ano": 1995,
-        "link": "https://www.ruby-lang.org/en/documentation/"
+        "nome": "Live Server",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/ritwickdey/liveserver/5.7.9/1655397387843/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Cria um servidor de desenvolvimento local com capacidade de recarregamento ao vivo para páginas web estáticas e dinâmicas, permitindo que os desenvolvedores vejam as alterações em tempo real sem atualizações manuais.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
     },
     {
-        "nome": "TypeScript",
-        "descricao": "TypeScript é um superset do JavaScript que adiciona tipagem estática opcional à linguagem, desenvolvido pela Microsoft.",
-        "ano": 2012,
-        "link": "https://www.typescriptlang.org/docs/"
+        "nome": "Path Intellisense",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/christian-kohler/path-intellisense/2.8.5/1683355933928/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Autocompleta nomes de arquivos, tornando mais rápido e fácil inserir caminhos de arquivo no código.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense"
     },
     {
-        "nome": "Rust",
-        "descricao": "Rust é uma linguagem de programação focada em segurança, concorrência e desempenho, patrocinada pela Mozilla.",
-        "ano": 2010,
-        "link": "https://doc.rust-lang.org/book/"
+        "nome": "Code Spell Checker",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/streetsidesoftware/code-spell-checker/2.23.4/1719520095966/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Ajuda a identificar e corrigir erros de ortografia em comentários, strings e texto simples no código, contribuindo para uma documentação mais limpa e profissional.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
     },
     {
-        "nome": "Kotlin",
-        "descricao": "Kotlin é uma linguagem de programação moderna e pragmática desenvolvida pela JetBrains, e é a linguagem preferida para desenvolvimento Android.",
-        "ano": 2011,
-        "link": "https://kotlinlang.org/docs/home.html"
+        "nome": "Auto Rename Tag",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/formulahendry/auto-rename-tag/0.1.10/1633664939396/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Renomeia automaticamente tags HTML/XML em par, economizando tempo e reduzindo erros durante o desenvolvimento front-end.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"
     },
     {
-        "nome": "Swift",
-        "descricao": "Swift é uma linguagem de programação poderosa e intuitiva criada pela Apple para desenvolvimento de apps para iOS, Mac, Apple TV e Apple Watch.",
-        "ano": 2014,
-        "link": "https://developer.apple.com/documentation/swift"
+        "nome": "REST Client",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/humao/rest-client/0.25.1/1643896374994/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Permite que os desenvolvedores enviem requisições HTTP e visualizem as respostas diretamente no VS Code, otimizando os testes de API sem a necessidade de ferramentas externas.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client"
+    },
+    {
+        "nome": "vscode-icons",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/vscode-icons-team/vscode-icons/12.8.0/1714072199058/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Melhora a aparência visual do explorador de arquivos adicionando ícones distintos a arquivos e pastas, facilitando a identificação de tipos de arquivo e a navegação em projetos.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
     }
 ]

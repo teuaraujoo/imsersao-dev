@@ -3,10 +3,10 @@
 let cardContainer = document.querySelector(".card-container");
 // Seleciona o elemento <input> dentro do <header> e o armazena na variável campoBusca.
 // Este é o campo onde o usuário digitará o termo para a busca.
-let campoBusca = document.querySelector("header input");
+let campoBusca = document.querySelector("main input");
 // Seleciona o elemento <button> dentro do <header> e o armazena na variável botaoBusca.
 // Este é o botão que o usuário clicará para iniciar a busca.
-let botaoBusca = document.querySelector("header button");
+let botaoBusca = document.querySelector("main button");
 // Inicializa um array vazio chamado 'dados'. Este array será preenchido com os dados do arquivo data.json.
 let dados = [];
 
@@ -43,19 +43,29 @@ function renderizarCards(dados) {
     // Limpa o conteúdo atual do container de cards para exibir apenas os resultados da nova busca.
     cardContainer.innerHTML = "";
     // Itera sobre cada objeto 'dado' dentro do array 'dados' (que pode ser o completo ou o filtrado).
-    for(let dado of dados) {
+    for (const dado of dados) {
         // Cria um novo elemento HTML <article> para representar o card.
-        let article = document.createElement("article");
+        const card = document.createElement("article");
         // Adiciona a classe "card" ao elemento <article> para aplicar os estilos CSS.
-        article.classList.add("card");
-        // Define o conteúdo HTML do card usando uma template string, que permite inserir os dados do objeto (nome, ano, etc.) diretamente no HTML.
-        article.innerHTML = `
-        <h2>${dado.nome}</h2>
-        <p>${dado.ano}</p>
-        <p>${dado.descricao}</p>
-        <a href="${dado.link}" target="_blank">Saiba mais</a>
-        `
-        cardContainer.appendChild(article);
+        card.classList.add("card");
+
+        // Adiciona um SVG placeholder como o usuário mencionou que as imagens virão depois.
+        card.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg>
+            <div class="card__content">
+                <p class="card__title">${dado.nome}</p>
+                <p class="card__description">${dado.descricao}</p>
+            </div>
+        `;
+        // Adiciona um evento de clique ao card para abrir o link
+        if (dado.link) {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => {
+                window.open(dado.link, '_blank');
+            });
+        }
+
+        cardContainer.appendChild(card);
     }
 }
 
