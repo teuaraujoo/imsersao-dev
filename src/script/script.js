@@ -121,7 +121,7 @@ function obterNomeImagem(nomeExtensao) {
         "REST Client": "./src/assets/restclient.png",
         "vscode-icons": "./src/assets/vscodeicons.webp"
     };
-    return mapeamentoImagens[nomeExtensao] || "/src/assets/logo.png"; // Retorna logo.png como fallback
+    return mapeamentoImagens[nomeExtensao] || "./src/assets/logo.png"; // Retorna logo.png como fallback
 }
 
 // Função para criar um card (reutilizável)
