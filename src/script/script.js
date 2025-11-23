@@ -109,17 +109,17 @@ function IniciarBusca() {
 // Função para mapear o nome da extensão para o nome do arquivo de imagem
 function obterNomeImagem(nomeExtensao) {
     const mapeamentoImagens = {
-        "Gemini Code Assist": "/src/assets/gemini.png",
-        "GitHub Copilot": "/src/assets/githubcopilot.png",
-        "GitLens": "/src/assets/gitlens.png",
+        "Gemini Code Assist": "./src/assets/gemini.png",
+        "GitHub Copilot": "./src/assets/githubcopilot.png",
+        "GitLens": "./src/assets/gitlens.png",
         "Prettier": "/src/assets/prettier.png",
-        "ESLint": "/src/assets/eslint.png",
-        "Live Server": "/src/assets/liveserver.webp",
-        "Path Intellisense": "/src/assets/pathintellisense.png",
-        "Code Spell Checker": "/src/assets/codespell.png",
-        "Auto Rename Tag": "/src/assets/autorenametag.png",
-        "REST Client": "/src/assets/restclient.png",
-        "vscode-icons": "/src/assets/vscodeicons.webp"
+        "ESLint": "./src/assets/eslint.png",
+        "Live Server": "./src/assets/liveserver.webp",
+        "Path Intellisense": "./src/assets/pathintellisense.png",
+        "Code Spell Checker": "./src/assets/codespell.png",
+        "Auto Rename Tag": "./src/assets/autorenametag.png",
+        "REST Client": "./src/assets/restclient.png",
+        "vscode-icons": "./src/assets/vscodeicons.webp"
     };
     return mapeamentoImagens[nomeExtensao] || "/src/assets/logo.png"; // Retorna logo.png como fallback
 }
