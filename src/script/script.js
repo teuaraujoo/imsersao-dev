@@ -7,6 +7,7 @@ let campoBusca = document.querySelector("#campo-busca");
 // Seleciona o elemento <button> de busca e o armazena na variável botaoBusca.
 // Este é o botão que o usuário clicará para iniciar a busca.
 let botaoBusca = document.querySelector("#botao-busca");
+let loadMoreButton = document.querySelector("#load-more-button");
 // Seleciona os elementos das views
 let mainView = document.querySelector("#main-view");
 let detalhesView = document.querySelector("#detalhes-view");
@@ -16,6 +17,8 @@ let header = document.querySelector("header");
 let footer = document.querySelector(".footer");
 // Inicializa um array vazio chamado 'dados'. Este array será preenchido com os dados do arquivo data.json.
 let dados = [];
+let itemsPerPage = 8;
+let currentPage = 1;
 
 // Define uma função assíncrona para carregar os dados do arquivo JSON.
 async function carregarDados() {
@@ -26,8 +29,8 @@ async function carregarDados() {
             let resposta = await fetch("data.json");
             // Converte a resposta da requisição para o formato JSON. 'await' pausa até a conversão terminar.
             dados = await resposta.json();
-            // Exibe todos os dados quando carregar
-            renderizarCards(dados);
+            // Exibe a primeira página de dados
+            renderizarPagina();
         } catch (error) {
             // Se ocorrer um erro ao buscar ou converter os dados, uma mensagem de erro é exibida no console.
             console.error("Falha ao buscar os dados:", error);
@@ -39,6 +42,7 @@ async function carregarDados() {
 // Função para mostrar a view principal e esconder a view de detalhes
 function mostrarViewPrincipal() {
     detalhesView.classList.add("hidden");
+    if (loadMoreButton) loadMoreButton.style.display = 'block';
     // Adiciona animação fade-in na view principal
     setTimeout(() => {
         mainView.classList.remove("hidden");
@@ -56,6 +60,7 @@ function mostrarViewPrincipal() {
 // Função para mostrar a view de detalhes e esconder a view principal
 function mostrarViewDetalhes() {
     mainView.classList.add("hidden");
+    if (loadMoreButton) loadMoreButton.style.display = 'none';
     // Adiciona animação fade-in na view de detalhes
     setTimeout(() => {
         detalhesView.classList.remove("hidden");
@@ -84,7 +89,9 @@ function IniciarBusca() {
     // Se o campo de busca estiver vazio, mostra todos os dados na view principal
     if (termoBusca === "") {
         mostrarViewPrincipal();
-        renderizarCards(dados);
+        cardContainer.innerHTML = ""; // Limpa os cards
+        currentPage = 1; // Reseta a página
+        renderizarPagina(); // Renderiza a primeira página
         return;
     }
 
@@ -103,6 +110,7 @@ function IniciarBusca() {
         // Se não encontrou resultados, mantém na view principal e mostra mensagem
         mostrarViewPrincipal();
         cardContainer.innerHTML = "<p style='text-align: center; color: var(--tertiary-color); font-size: 1.2rem;'>Nenhuma extensão encontrada com esse termo.</p>";
+        if (loadMoreButton) loadMoreButton.style.display = 'none'; // Esconde o botão se não houver resultados
     }
 }
 
@@ -119,7 +127,23 @@ function obterNomeImagem(nomeExtensao) {
         "Code Spell Checker": "./assets/codespell.png",
         "Auto Rename Tag": "./assets/autorenametag.png",
         "REST Client": "./assets/restclient.png",
-        "vscode-icons": "./assets/vscodeicons.webp"
+        "vscode-icons": "./assets/vscodeicons.webp",
+        "Thunder Client": "./assets/thunder-client.png",
+        "Bracket Pair Colorizer 2": "./assets/brack-pair-colorize2.png",
+        "Material Icon Theme": "./assets/material-icon-theme.png",
+        "Tailwind CSS IntelliSense": "./assets/tailwind.png",
+        "Better Comments": "./assets/better-comments.png",
+        "Peacock": "./assets/peacock.png",
+        "Import Cost": "./assets/import-cost.png",
+        "Code Time": "./assets/codetime.png",
+        "Colorize": "./assets/colorize.png",
+        "Console Ninja": "./assets/console-ninja.png",
+        "Code Runner": "./assets/code-runner.png",
+        "CodeSnap": "./assets/code-snap.png",
+        "Portuguese (Brazil) Language Pack": "./assets/Portuguese(brazil).png",
+        "TODO Highlight": "./assets/TODOhighlight.png",
+        "tldraw": "./assets/tldraw.webp",
+        "Bookmarks": "./assets/bookmarks.png"
     };
     return mapeamentoImagens[nomeExtensao] || "./assets/logo.png"; // Retorna logo.png como fallback
 }
@@ -159,14 +183,37 @@ function criarCard(dado, index = 0) {
     return card;
 }
 
-function renderizarCards(dados) {
-    // Limpa o conteúdo atual do container de cards para exibir apenas os resultados da nova busca.
-    cardContainer.innerHTML = "";
+function renderizarCards(dadosParaRenderizar) {
     // Itera sobre cada objeto 'dado' dentro do array 'dados' (que pode ser o completo ou o filtrado).
-    for (let i = 0; i < dados.length; i++) {
-        const card = criarCard(dados[i], i);
+    for (let i = 0; i < dadosParaRenderizar.length; i++) {
+        const globalIndex = (currentPage - 1) * itemsPerPage + i;
+        const card = criarCard(dadosParaRenderizar[i], globalIndex);
         cardContainer.appendChild(card);
     }
+}
+
+// Nova função para renderizar a página
+function renderizarPagina() {
+    const inicio = (currentPage - 1) * itemsPerPage;
+    const fim = inicio + itemsPerPage;
+    const dadosPaginados = dados.slice(inicio, fim);
+
+    renderizarCards(dadosPaginados);
+
+    // Esconde o botão se não houver mais itens para carregar
+    if (loadMoreButton) {
+        if (fim >= dados.length) {
+            loadMoreButton.style.display = 'none';
+        } else {
+            loadMoreButton.style.display = 'block';
+        }
+    }
+}
+
+// Nova função para o botão "Carregar Mais"
+function handleLoadMore() {
+    currentPage++;
+    renderizarPagina();
 }
 
 // Função para renderizar cards na view de detalhes
@@ -193,11 +240,18 @@ if (botaoBusca) {
     botaoBusca.addEventListener("click", IniciarBusca);
 }
 
+// Adiciona evento ao botão "Carregar Mais"
+if (loadMoreButton) {
+    loadMoreButton.addEventListener("click", handleLoadMore);
+}
+
 // Adiciona evento ao botão voltar
 botaoVoltar.addEventListener("click", () => {
     mostrarViewPrincipal();
     campoBusca.value = ""; // Limpa o campo de busca
-    renderizarCards(dados); // Mostra todos os cards novamente
+    cardContainer.innerHTML = ""; // Limpa os cards
+    currentPage = 1; // Reseta a página
+    renderizarPagina(); // Mostra a primeira página de cards novamente
 });
 
 // Permite buscar pressionando Enter no campo de busca

@@ -66,5 +66,90 @@
         "imagem": "https://github.gallerycdn.vsassets.io/extensions/vscode-icons-team/vscode-icons/12.8.0/1714072199058/Microsoft.VisualStudio.Services.Icons.Default",
         "descricao": "Melhora a aparência visual do explorador de arquivos adicionando ícones distintos a arquivos e pastas, facilitando a identificação de tipos de arquivo e a navegação em projetos.",
         "link": "https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
+    },
+    {
+        "nome": "Thunder Client",
+        "descricao": "Uma alternativa rápida e leve ao Postman, permitindo testar APIs REST diretamente no VS Code com uma interface simples e eficiente.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client"
+    },
+    {
+        "nome": "Bracket Pair Colorizer 2",
+        "descricao": "Coloriza pares de colchetes e parênteses para facilitar a leitura e navegação em códigos complexos.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2"
+    },
+    {
+        "nome": "Material Icon Theme",
+        "descricao": "Adiciona um conjunto de ícones no estilo Material Design ao VS Code, melhorando a organização visual do explorador de arquivos.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"
+    },
+    {
+        "nome": "Tailwind CSS IntelliSense",
+        "descricao": "Oferece autocomplete, formatação e validação inteligente para classes do Tailwind CSS, acelerando o desenvolvimento front-end.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss"
+    },
+    {
+        "nome": "Better Comments",
+        "descricao": "Permite criar comentários mais organizados com destaque para alertas, notas, perguntas e seções importantes do código.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments"
+    },
+    {
+        "nome": "Peacock",
+        "descricao": "Permite personalizar a cor da barra de título do VS Code, ideal para identificar rapidamente múltiplas janelas de projetos diferentes.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock"
+    },
+    {
+        "nome": "Import Cost",
+        "descricao": "Exibe o tamanho dos pacotes importados em arquivos JavaScript e TypeScript, ajudando a identificar dependências pesadas.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost"
+    },
+    {
+        "nome": "Code Time",
+        "descricao": "Monitora automaticamente o tempo de programação, produtividade, horários de pico e métricas do desenvolvedor, integrado a dashboards pessoais.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=softwaredotcom.swdc-vscode"
+    },
+    {
+        "nome": "Colorize",
+        "descricao": "Destaca valores de cores no código (hex, rgb, hsl) com sua visualização real, facilitando o trabalho com estilos.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize"
+    },
+    {
+        "nome": "Console Ninja",
+        "descricao": "Exibe logs, erros e mensagens do console diretamente no editor sem precisar abrir o terminal integrado.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja"
+    },
+    {
+        "nome": "Code Runner",
+        "descricao": "Permite executar rapidamente código em várias linguagens diretamente no editor, sem configurar terminais ou ambientes.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner"
+    },
+    {
+        "nome": "CodeSnap",
+        "descricao": "Gera capturas de tela bonitas e estilizadas de trechos de código, ótimo para compartilhar em redes sociais e documentações.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap"
+    },
+    {
+        "nome": "ErrorLens",
+        "descricao": "Exibe erros e avisos diretamente na linha do código, destacando problemas sem a necessidade de abrir o painel de erros.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens"
+    },
+    {
+        "nome": "Portuguese (Brazil) Language Pack",
+        "descricao": "Pacote oficial de idioma que traduz a interface do VS Code para português brasileiro.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-pt-BR"
+    },
+    {
+        "nome": "TODO Highlight",
+        "descricao": "Dá destaque visual às anotações TODO, FIXME e similares no código, facilitando encontrar pendências rapidamente.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight"
+    },
+    {
+        "nome": "tldraw",
+        "descricao": "Integra o tldraw ao VS Code, permitindo criar diagramas, fluxos e desenhos diretamente no editor.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=tldraw-org.tldraw-vscode"
+    },
+    {
+        "nome": "Bookmarks",
+        "descricao": "Permite marcar linhas importantes no código e navegar rapidamente entre elas, útil para grandes arquivos e refatorações.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks"
     }
 ]
