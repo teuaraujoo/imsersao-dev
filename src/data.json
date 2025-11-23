@@ -1,4 +1,12 @@
 [
+
+    {
+
+        "nome": "Gemini Code Assist",
+        "imagem": "https://github.gallerycdn.vsassets.io/extensions/google/gemini-code-assist/0.1.0/1719521133271/Microsoft.VisualStudio.Services.Icons.Default",
+        "descricao": "Uma ferramenta de programação em par com IA que oferece sugestões de código em linha e assistência de bate-papo integrada, ajudando os desenvolvedores a escrever código de forma mais rápida e inteligente.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist"
+    },
     {
         "nome": "GitHub Copilot",
         "imagem": "https://github.gallerycdn.vsassets.io/extensions/github/copilot/1.189.0/1719521133271/Microsoft.VisualStudio.Services.Icons.Default",

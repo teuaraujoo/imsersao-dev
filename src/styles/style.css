@@ -84,30 +84,76 @@ header h1 {
     margin-bottom: 2rem;
 }
 
+/* Container de busca inspirado em Uiverse */
 .search-container {
+    position: relative;
     display: flex;
     align-items: center;
-    background-color: #fff;
-    border-radius: 30px;
-    padding: 5px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(1, 222, 130, 0.2);
+    border-radius: 16px;
+    padding: 8px 16px;
     width: 100%;
-    max-width: 500px;
+    max-width: 650px;
     margin: 0 auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    gap: 8px;
 }
 
+.search-container:hover {
+    border-color: rgba(1, 222, 130, 0.4);
+    box-shadow: 0 6px 25px rgba(1, 222, 130, 0.15);
+}
+
+.search-container:focus-within {
+    border-color: var(--tertiary-color);
+    box-shadow: 0 0 0 4px rgba(1, 222, 130, 0.1), 0 8px 30px rgba(1, 222, 130, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Ícone de busca */
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--tertiary-color);
+    margin-right: 12px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within .search-icon {
+    color: var(--tertiary-color);
+    transform: scale(1.1);
+}
+
+/* Input de busca */
 .search-container input {
     border: none;
     outline: none;
     background: transparent;
-    padding: 10px 15px;
+    padding: 0;
     font-size: 1rem;
-    color: #333;
-    width: 100%;
+    color: var(--secondary-color);
+    flex: 1;
+    min-width: 0;
+    font-family: inherit;
+    transition: all 0.3s ease;
 }
 
 .search-container input::placeholder {
-    color: #999;
+    color: rgba(232, 234, 237, 0.5);
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within input::placeholder {
+    color: rgba(232, 234, 237, 0.3);
+}
+
+.search-container input:focus {
+    color: var(--secondary-color);
 }
 
 /* From Uiverse.io by vinodjangid07 */ 
@@ -186,32 +232,62 @@ header h1 {
 }
 
 
-#botao-busca {
-    background-color: #1d8b5e;
-    color: white;
+/* Botão de busca integrado ao design moderno */
+.botao-busca {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--tertiary-color) 100%);
+    color: var(--bg-color);
     border: none;
-    border-radius: 25px;
-    padding: 10px 25px;
-    font-size: 1rem;
-    font-weight: 500;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     white-space: nowrap;
-    transition: all 0.3s ease;
-  }
-  
-#botao-busca:hover {
-  background-color: var(--primary-color); /* Muda a cor de fundo ao passar o mouse */
-  border: none;
-  transform: scale(1.01);
-  box-shadow: none;
-  border: none;
-  color: white;
-  box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(1, 222, 130, 0.2);
+    font-family: inherit;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
 }
 
-#botao-busca:active {
-  transform: scale(0.98); /* Efeito de clique (diminui o tamanho) */
+.botao-busca::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.botao-busca:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.botao-busca:hover {
+    background: linear-gradient(135deg, var(--tertiary-color) 0%, var(--primary-color) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(1, 222, 130, 0.4);
+}
+
+.botao-busca:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(1, 222, 130, 0.3);
+}
+
+.botao-busca:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(1, 222, 130, 0.3);
+}
+
+.botao-busca span {
+    position: relative;
+    z-index: 1;
 }
 
 #back-button {
@@ -242,13 +318,21 @@ main {
     margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente */
     margin-top: 2rem; /* Margem no topo */
     height: calc(100vh - 10rem - 4rem); /* Calcula a altura para preencher o espaço restante da tela */
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+#initial-content {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
 }
 
 .tags-container {
     display: flex;
-    flex-wrap: wrap;
-    width: 60rem;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 70rem;
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -372,9 +456,19 @@ article a:hover {
         margin-bottom: 1rem; /* Adiciona margem inferior */
     }
 
-    div input { /* Estilos para o input em telas menores */
-        width: 90vw; /* Largura baseada na largura da viewport */
-        font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    .search-container { /* Estilos para o container de busca em telas menores */
+        max-width: 90vw;
+        padding: 10px 16px;
+    }
+    
+    .search-container input {
+        font-size: 0.95rem;
+    }
+    
+    .search-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
     }
 
     main { /* Estilos para o main em telas menores */
@@ -383,6 +477,16 @@ article a:hover {
 
     article:hover { /* Estilos para o article em telas menores */
         transform: none; /* Remove o efeito de escala ao passar o mouse */
+    }
+
+    .card-container { /* Estilos para o container de cards em telas menores */
+        padding: 10px; /* Reduz o padding */
+        gap: 15px; /* Reduz o espaçamento entre cards */
+    }
+
+    .card { /* Estilos para os cards em telas menores */
+        width: calc(100% - 20px); /* Cards ocupam largura total menos o espaçamento */
+        max-width: 300px; /* Limita a largura máxima */
     }
 }
 
@@ -393,9 +497,29 @@ article a:hover {
         word-wrap: break-word; /* Permite a quebra de palavras longas */
     }
 
-    div input, /* Estilos para o input e seu placeholder em telas muito pequenas */
-    div input::placeholder {
-        font-size: 1rem; /* Reduz o tamanho da fonte */
+    .search-container { /* Estilos para o container de busca em telas muito pequenas */
+        max-width: 95vw;
+        padding: 6px 12px;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    
+    .search-container input,
+    .search-container input::placeholder {
+        font-size: 0.9rem;
+    }
+    
+    .search-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+    }
+    
+    .botao-busca {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        width: 100%;
+        margin-top: 8px;
     }
 
     article h2 { /* Estilos para o h2 do article em telas muito pequenas */
@@ -417,6 +541,28 @@ article a:hover {
     button { /* Estilos para o botão em telas muito pequenas */
         margin-top: 1rem; /* Adiciona margem no topo */
     }
+
+    .card-container { /* Estilos para o container de cards em telas muito pequenas */
+        padding: 10px; /* Padding reduzido */
+        gap: 10px; /* Espaçamento reduzido */
+    }
+
+    .card { /* Estilos para os cards em telas muito pequenas */
+        width: 100%; /* Cards ocupam toda a largura */
+        max-width: 100%; /* Sem limite de largura máxima */
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .card { 
@@ -432,12 +578,25 @@ article a:hover {
    perspective: 1000px; 
    box-shadow: 0 0 0 5px #ffffff80; 
    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+   flex-shrink: 0;
+   margin-bottom: 0 !important; /* Remove margem inferior para que os cards fiquem lado a lado */
+   border-bottom: none !important; /* Remove borda inferior do estilo article */
+   padding: 0 !important; /* Remove padding do estilo article */
  } 
  
- .card svg { 
-   width: 48px; 
-   fill: #333; 
+ .card__preview { 
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%; 
+   height: 100%; 
+   object-fit: contain; 
+   object-position: center; 
    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+   padding: 20px; 
+   box-sizing: border-box;
+   background-color: #f2f2f2;
+   border-radius: 10px;
  } 
  
  .card:hover { 
@@ -457,6 +616,11 @@ article a:hover {
    transform: rotateX(-90deg); 
    transform-origin: bottom; 
    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   overflow: hidden;
  } 
  
  .card:hover .card__content { 
@@ -467,18 +631,249 @@ article a:hover {
    margin: 0; 
    font-size: 24px; 
    color: #333; 
-   font-weight: 700; 
+   font-weight: 700;
+   text-align: center;
  } 
  
- .card:hover svg { 
-   scale: 0; 
+ .card:hover .card__preview { 
+   transform: rotateX(90deg); 
+   opacity: 0; 
  } 
  
- .card__description { 
-   margin: 10px 0 0; 
-   font-size: 14px; 
-   color: #777; 
-   line-height: 1.4; 
-   max-height: 120px;
-   overflow-y: auto;
- }
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+  max-height: 140px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  margin-right: -8px;
+  text-align: left;
+  width: 100%;
+  flex-grow: 1;
+  /* Estilização da scrollbar para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização da scrollbar para WebKit (Chrome, Safari, Edge) */
+.card__description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card__description::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.card__description::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.card__description::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary-color);
+}
+
+/* Estilos para esconder elementos */
+.hidden {
+    display: none !important;
+}
+
+/* Animações fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInView {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animação fade-in para o carregamento inicial */
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animação fade-in para transição entre views */
+.fade-in-view {
+    animation: fadeInView 0.4s ease-out forwards;
+}
+
+/* Cards começam com opacidade 0 para animação, mas são controlados pelo JavaScript */
+
+/* View de detalhes */
+#detalhes-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238ab4f8' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M2 0h2v2H2V0zm6 0h2v2H8V0zm6 0h2v2h-2V0zM0 6h2v2H0V6zm2 6h2v2H2v-2zm0 6h2v2H0v-2zM8 6h2v2H8V6zm2 6h2v2h-2v-2zm-2 6h2v2H8v-2zm6-12h2v2h-2V0zM8 2h2v2H8V2zM2 8h2v2H2V8zm-2 6h2v2H0v-2zm6 6h2v2H6v-2zm6 0h2v2h-2v-2zm2-6h2v2h-2v-2zm-6-2h2v2h-2V8zm-2-2h2v2H8V6zm-6 0h2v2H2V6z'/%3E%3C/g%3E%3C/svg%3E");
+    overflow-y: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+#detalhes-view.hidden {
+    display: none !important;
+}
+
+#detalhes-view:not(.hidden) {
+    opacity: 1;
+    animation: fadeInView 0.4s ease-out forwards;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    font-family: inherit;
+}
+
+.btn-voltar-principal {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--tertiary-color) 100%);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin-left: auto;
+    margin-right: 1rem;
+    box-shadow: 0 2px 8px rgba(1, 222, 130, 0.2);
+    white-space: nowrap;
+    position: relative;
+}
+
+.btn-voltar-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(1, 222, 130, 0.4);
+    background: linear-gradient(135deg, var(--tertiary-color) 0%, var(--primary-color) 100%);
+}
+
+.btn-voltar-principal:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .btn-voltar-principal {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-voltar-principal {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+}
+
+.botao-voltar:hover {
+    background-color: var(--tertiary-color);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(1, 222, 130, 0.3);
+}
+
+.botao-voltar:active {
+    transform: scale(0.98);
+}
+
+.detalhes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1400px;
+    margin: 80px auto 40px;
+    padding: 20px;
+}
+
+/* Cards padronizados - mesma aparência em ambas as views */
+#detalhes-view .card {
+    width: 300px;
+    height: 250px;
+}
+
+@media (max-width: 768px) {
+    .botao-voltar {
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .detalhes-container {
+        margin-top: 50px;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    #detalhes-view .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    #detalhes-view .card {
+        height: 250px;
+    }
+}
